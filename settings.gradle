@@ -1,0 +1,4 @@
+rootProject.name = 'jinglenote'
+
+include 'jinglenote-core'
+
