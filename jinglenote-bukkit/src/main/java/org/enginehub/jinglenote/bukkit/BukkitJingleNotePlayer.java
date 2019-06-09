@@ -64,25 +64,35 @@ public class BukkitJingleNotePlayer extends JingleNotePlayer {
         switch(instrument) {
             case BASS:
                 return Sound.BLOCK_NOTE_BLOCK_BASS;
-            case SNARE_DRUM:
+            case SNARE:
                 return Sound.BLOCK_NOTE_BLOCK_SNARE;
-            case STICKS:
+            case HAT:
                 return Sound.BLOCK_NOTE_BLOCK_HAT;
-            case BASS_DRUM:
+            case BANJO:
+                return Sound.BLOCK_NOTE_BLOCK_BANJO;
+            case BASEDRUM:
                 return Sound.BLOCK_NOTE_BLOCK_BASEDRUM;
             case BELL:
                 return Sound.BLOCK_NOTE_BLOCK_BELL;
+            case BIT:
+                return Sound.BLOCK_NOTE_BLOCK_BIT;
             case CHIME:
                 return Sound.BLOCK_NOTE_BLOCK_CHIME;
+            case COW_BELL:
+                return Sound.BLOCK_NOTE_BLOCK_COW_BELL;
+            case DIDGERIDOO:
+                return Sound.BLOCK_NOTE_BLOCK_DIDGERIDOO;
             case FLUTE:
                 return Sound.BLOCK_NOTE_BLOCK_FLUTE;
             case XYLOPHONE:
                 return Sound.BLOCK_NOTE_BLOCK_XYLOPHONE;
+            case IRON_XYLOPHONE:
+                return Sound.BLOCK_NOTE_BLOCK_IRON_XYLOPHONE;
             case PLING:
                 return Sound.BLOCK_NOTE_BLOCK_PLING;
             case GUITAR:
                 return Sound.BLOCK_NOTE_BLOCK_GUITAR;
-            case PIANO:
+            case HARP:
             default:
                 return Sound.BLOCK_NOTE_BLOCK_HARP;
         }
