@@ -1,4 +1,6 @@
 rootProject.name = 'jinglenote'
 
 include 'jinglenote-core'
+include 'jinglenote-bukkit'
+include 'jinglenote-sponge'
 

@@ -1,0 +1,12 @@
+repositories {
+    mavenCentral()
+    maven {
+        url = "http://repo.spongepowered.org/maven/"
+    }
+}
+
+dependencies {
+    compile project(':jinglenote-core')
+    compile "org.spongepowered:spongeapi:7.1.0-SNAPSHOT"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
