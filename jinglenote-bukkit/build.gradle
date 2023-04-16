@@ -1,13 +1,13 @@
 repositories {
     mavenCentral()
     maven {
-        name = 'spigotmc-repo'
-        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+        name = 'papermc-repo'
+        url = 'https://repo.papermc.io/repository/maven-public/'
     }
 }
 
 dependencies {
-    compile project(':jinglenote-core')
-    compileOnly 'org.spigotmc:spigot-api:1.15.2-R0.1-SNAPSHOT'
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation project(':jinglenote-core')
+    implementation 'io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
 }
