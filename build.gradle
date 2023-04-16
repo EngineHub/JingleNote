@@ -2,7 +2,6 @@ buildscript {
     repositories {
         mavenCentral()
         maven { url = "https://oss.sonatype.org/content/repositories/snapshots/" }
-        jcenter()
     }
 
     configurations.all {
@@ -12,14 +11,14 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.4'
-        classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.8.1'
+        classpath 'gradle.plugin.com.github.johnrengelman:shadow:7.1.2'
+        classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.27.1'
     }
 }
 
 plugins {
-    id 'net.minecrell.licenser' version '0.4.1' apply false
-    id "org.ajoberstar.grgit" version "2.3.0"
+    id 'org.cadixdev.licenser' version '0.6.1' apply false
+    id "org.ajoberstar.grgit" version "4.1.1"
 }
 
 println """
@@ -75,7 +74,7 @@ artifactoryPublish.skip = true
 subprojects {
     repositories {
         mavenCentral()
-        maven { url "http://maven.sk89q.com/repo/" }
+        maven { url "https://maven.enginehub.org/repo/" }
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
     }
     configurations.all {
@@ -85,14 +84,15 @@ subprojects {
     }
 
     apply plugin: 'java'
-    apply plugin: 'maven'
+    apply plugin: 'maven-publish'
     apply plugin: 'com.jfrog.artifactory'
-    apply plugin: 'net.minecrell.licenser'
+    apply plugin: 'org.cadixdev.licenser'
 
     ext.internalVersion = version + ";" + gitCommitHash
 
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    java {
+        toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+    }
 
     if (JavaVersion.current().isJava8Compatible()) {
         // Java 8 turns on doclint which we fail
